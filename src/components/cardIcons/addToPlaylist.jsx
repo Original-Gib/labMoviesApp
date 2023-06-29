@@ -7,7 +7,8 @@ const AddToPlaylistIcon = ({ movie }) => {
     const context = useContext(MoviesContext);
 
     const onUserSelect = (e) => {
-
+        e.preventDefault();
+        context.addToMustWatch(movie);
     };
     return (
         <IconButton aria-label="add to playlist" onClick={onUserSelect}>
