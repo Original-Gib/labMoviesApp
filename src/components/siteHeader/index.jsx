@@ -32,7 +32,7 @@ const SiteHeader = () => {
         { label: "Upcoming", path: "/movies/upcoming" },
         { label: "Favorites", path: "/movies/favourites" },
         { label: "Top Rated", path: "/movies/top_rated" },
-        { label: "Option 4", path: "/" },
+        { label: "Tv Shows", path: "/tvShows" },
     ];
 
     const handleMenuSelect = (pageURL) => {
