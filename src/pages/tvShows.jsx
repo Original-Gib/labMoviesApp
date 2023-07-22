@@ -23,8 +23,8 @@ const TvShowPage = (props) => {
         <PageTemplate
             title="Tv Shows"
             tvShows={tvShows}
-            action={(movie) => {
-                return <AddToFavouritesIcon movie={movie} />
+            action={(tvShow) => {
+                return <AddToFavouritesIcon movie={tvShow} />
             }}
         />
     );
