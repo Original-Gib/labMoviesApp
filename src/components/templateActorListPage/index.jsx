@@ -4,7 +4,7 @@ import FilterCard from "../filterMoviesCard";
 import Grid from "@mui/material/Grid";
 import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
-import TvShowList from "../tvList";
+import ActorList from "../actorList";
 
 const styles = {
     root: {
@@ -18,14 +18,14 @@ const styles = {
     },
 };
 
-function TvShowListPageTemplate({ tvShows, title, action }) {
+function ActorListPageTemplate({ actors, title, action }) {
     const [titleFilter, setTitleFilter] = useState("");
     const [genreFilter, setGenreFilter] = useState("0");
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const genreId = Number(genreFilter);
 
-    let displayedTvShows = tvShows
+    let displayedActors = actors
         .filter((m) => {
             return m.name.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
         })
@@ -45,7 +45,7 @@ function TvShowListPageTemplate({ tvShows, title, action }) {
                     <Header title={title} />
                 </Grid>
                 <Grid item container spacing={5}>
-                    <TvShowList action={action} tvShows={tvShows} />
+                    <ActorList action={action} actors={actors} />
                 </Grid>
             </Grid>
             <Fab
@@ -70,4 +70,4 @@ function TvShowListPageTemplate({ tvShows, title, action }) {
         </>
     );
 }
-export default TvShowListPageTemplate;
+export default ActorListPageTemplate;
