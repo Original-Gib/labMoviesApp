@@ -15,6 +15,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
+
 const MyMovieForm = () => {
     const defaultValues = {
         title: "",
@@ -50,7 +51,7 @@ const MyMovieForm = () => {
     const onSubmit = (myMovie) => {
 
         myMovie.productionCompany = productionCompany
-        console.log(myMovie);
+        context.addMyMovie(myMovie);
         setOpen(true); // NEW
     };
     return (

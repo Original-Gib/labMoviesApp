@@ -6,9 +6,15 @@ const MoviesContextProvider = (props) => {
     const [myReviews, setMyReviews] = useState({})
     const [favourites, setFavourites] = useState([]);
     const [mustWatch, setMustWatch] = useState([]);
+    const [myMovie, setMyMovie] = useState({});
 
     const addReview = (movie, review) => {   // NEW
         setMyReviews({ ...myReviews, [movie.id]: review })
+    };
+
+    const addMyMovie = (myMovie) => {
+        setMyMovie({ myMovie });
+        console.log(myMovie);
     };
 
     const addToFavourites = (movie) => {
@@ -41,6 +47,8 @@ const MoviesContextProvider = (props) => {
                 removeFromFavourites,
                 addReview,    // NEW
                 addToMustWatch,
+                addMyMovie,
+                myMovie
             }}
         >
             {props.children}

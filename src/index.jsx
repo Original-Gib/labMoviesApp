@@ -17,6 +17,7 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import ActorPage from "./pages/actors";
 import ActorDetailsPage from "./pages/actorDetailsPage";
 import MyMovieFormPage from "./pages/myMovieFormPage";
+import MyMoviePage from "./pages/myMoviePage";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -50,6 +51,7 @@ const App = () => {
                         <Route path="/actors" element={<ActorPage />} />
                         <Route path="/actors/:id" element={<ActorDetailsPage />} />
                         <Route path="/myMovieForm" element={<MyMovieFormPage />} />
+                        <Route path="/myMovie" element={<MyMoviePage />} />
                     </Routes>
                 </MoviesContextProvider>
             </BrowserRouter>
