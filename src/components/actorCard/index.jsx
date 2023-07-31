@@ -24,9 +24,9 @@ const styles = {
 };
 
 export default function ActorCard({ actor, action }) {
-    const { favourites, addToFavourites } = useContext(MoviesContext);
+    const { favouriteActors, addToFavouriteActors } = useContext(MoviesContext);
 
-    if (favourites.find((id) => id === movie.id)) {
+    if (favouriteActors.find((id) => id === actor.id)) {
         actor.favourite = true;
     } else {
         actor.favourite = false
@@ -64,7 +64,7 @@ export default function ActorCard({ actor, action }) {
                     <Grid item xs={6}>
                         <Typography variant="h6" component="p">
                             <VideocamIcon fontSize="small" />
-                            {actor.known_for[0].title}
+                            {/* {actor.known_for[0].title} */}
                         </Typography>
                     </Grid>
                     <Grid item xs={6}>

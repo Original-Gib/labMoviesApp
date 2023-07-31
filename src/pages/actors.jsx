@@ -3,7 +3,7 @@ import PageTemplate from "../components/templateActorListPage";
 import { getActors } from "../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
-import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
+import AddToFavouriteActorsIcon from "../components/cardIcons/addToFavouriteActors";
 
 const ActorPage = (props) => {
     const { data, error, isLoading, isError } = useQuery("actors", getActors);
@@ -24,7 +24,7 @@ const ActorPage = (props) => {
             title="Actors"
             actors={actors}
             action={(actor) => {
-                return <AddToFavouritesIcon movie={actor} />
+                return <AddToFavouriteActorsIcon actor={actor} />
             }}
         />
     );

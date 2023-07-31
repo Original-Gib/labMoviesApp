@@ -30,12 +30,12 @@ const SiteHeader = () => {
     const menuOptions = [
         { label: "Home", path: "/" },
         { label: "Upcoming", path: "/movies/upcoming" },
-        { label: "Favorites", path: "/movies/favourites" },
+        { label: "Favorite Movies", path: "/movies/favourites" },
         { label: "Top Rated", path: "/movies/top_rated" },
         { label: "Tv Shows", path: "/tvShows" },
         { label: "Actors", path: "/actors" },
-        { label: "My Movie - Create", path: "/myMovieForm" },
-        { label: "My Movie - View", path: "/myMovie" },
+        { label: "Favorite Actors", path: "/actors/favourites" },
+        { label: "My Movie", path: "/myMovie" },
     ];
 
     const handleMenuSelect = (pageURL) => {
