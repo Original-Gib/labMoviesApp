@@ -49,6 +49,10 @@ const MoviesContextProvider = (props) => {
         setFavourites(favourites.filter((mId) => mId !== movie.id));
     };
 
+    const removeFromFavouriteActors = (actor) => {
+        setFavouriteActors(favouriteActors.filter((aId) => aId !== actor.id));
+    };
+
     return (
         <MoviesContext.Provider
             value={{
@@ -60,7 +64,8 @@ const MoviesContextProvider = (props) => {
                 addMyMovie,
                 myMovie,
                 addToFavouriteActors,
-                favouriteActors
+                favouriteActors,
+                removeFromFavouriteActors
             }}
         >
             {props.children}
