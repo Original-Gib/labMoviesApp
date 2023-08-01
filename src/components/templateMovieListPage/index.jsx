@@ -18,9 +18,10 @@ const styles = {
     },
 };
 
-function MovieListPageTemplate({ movies, title, action }) {
+function MovieListPageTemplate({ movies, title, action, release_date }) {
     const [titleFilter, setTitleFilter] = useState("");
     const [genreFilter, setGenreFilter] = useState("0");
+    const [releaseFilter, setReleaseFitler] = useState("");
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const genreId = Number(genreFilter);
@@ -30,11 +31,15 @@ function MovieListPageTemplate({ movies, title, action }) {
             return m.title.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
         })
         .filter((m) => {
+            return m.release_date.search(releaseFilter) !== -1;
+        })
+        .filter((m) => {
             return genreId > 0 ? m.genre_ids.includes(genreId) : true;
         });
 
     const handleChange = (type, value) => {
         if (type === "title") setTitleFilter(value);
+        else if (type === "release_date") setReleaseFitler(value);
         else setGenreFilter(value);
     };
 
@@ -45,7 +50,7 @@ function MovieListPageTemplate({ movies, title, action }) {
                     <Header title={title} />
                 </Grid>
                 <Grid item container spacing={5}>
-                    <MovieList action={action} movies={movies} />
+                    <MovieList action={action} movies={displayedMovies} />
                 </Grid>
             </Grid>
             <Fab

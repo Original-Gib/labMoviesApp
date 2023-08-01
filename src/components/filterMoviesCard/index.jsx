@@ -41,17 +41,21 @@ export default function FilterMoviesCard(props) {
         genres.unshift({ id: "0", name: "All" });
     }
 
-    const handleUserImput = (e, type, value) => {
+    const handleUserInput = (e, type, value) => {
         e.preventDefault();
         props.onUserInput(type, value); // NEW
     };
 
     const handleTextChange = (e, props) => {
-        handleUserImput(e, "title", e.target.value);
+        handleUserInput(e, "title", e.target.value);
+    };
+
+    const handleReleaseChange = (e, props) => {
+        handleUserInput(e, "release_date", e.target.value);
     };
 
     const handleGenreChange = (e) => {
-        handleUserImput(e, "genre", e.target.value);
+        handleUserInput(e, "genre", e.target.value);
     };
 
     return (
@@ -70,6 +74,15 @@ export default function FilterMoviesCard(props) {
                         value={props.titleFilter}
                         variant="filled"
                         onChange={handleTextChange}
+                    />
+                    <TextField
+                        sx={styles.formControl}
+                        id="release-search"
+                        label="YYYY-MM-DD"
+                        type="search"
+                        value={props.releaseFilter}
+                        variant="filled"
+                        onChange={handleReleaseChange}
                     />
                     <FormControl sx={styles.formControl}>
                         <InputLabel id="genre-label">Genre</InputLabel>
