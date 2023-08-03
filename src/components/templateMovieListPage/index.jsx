@@ -24,6 +24,7 @@ function MovieListPageTemplate({ movies, title, action, release_date }) {
     const [releaseFilter, setReleaseFitler] = useState("");
     const [drawerOpen, setDrawerOpen] = useState(false);
 
+
     const genreId = Number(genreFilter);
 
     let displayedMovies = movies
