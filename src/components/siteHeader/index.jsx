@@ -11,6 +11,8 @@ import Menu from "@mui/material/Menu";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import LogoutIcon from '@mui/icons-material/Logout';
+import supabase from "../../index";
 
 const styles = {
     title: {
@@ -45,6 +47,11 @@ const SiteHeader = () => {
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
     };
+
+
+    const signOut = () => {
+        supabase.auth.signOut()
+    }
 
     return (
         <>
@@ -104,6 +111,9 @@ const SiteHeader = () => {
                                     {opt.label}
                                 </Button>
                             ))}
+                            <IconButton onClick={signOut}  >
+                                <LogoutIcon fontSize="large" />
+                            </IconButton>
                         </>
                     )}
                 </Toolbar>
