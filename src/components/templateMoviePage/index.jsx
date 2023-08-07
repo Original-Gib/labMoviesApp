@@ -62,7 +62,6 @@ const TemplateMoviePage = ({ movie, children }) => {
                     {children}
                 </Grid>
             </Grid>
-            <button > Next</button>
         </>
     );
 };
