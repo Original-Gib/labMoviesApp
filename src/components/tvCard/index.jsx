@@ -24,13 +24,13 @@ const styles = {
 };
 
 export default function TvShowCard({ tvShow, action }) {
-    const { favourites, addToFavourites } = useContext(MoviesContext);
+    const { favouriteTvShows, addToFavouriteTvShows } = useContext(MoviesContext);
 
-    // if (favourites.find((id) => id === movie.id)) {
-    //     tvShow.favourite = true;
-    // } else {
-    //     tvShow.favourite = false
-    // }
+    if (favouriteTvShows.find((id) => id === tvShow.id)) {
+        tvShow.favourite = true;
+    } else {
+        tvShow.favourite = false
+    }
 
 
 
@@ -76,7 +76,7 @@ export default function TvShowCard({ tvShow, action }) {
                 </Grid>
             </CardContent>
             <CardActions disableSpacing>
-                {/* {action(tvShow)} */}
+                {action(tvShow)}
                 <Link to={`/tvShows/${tvShow.id}`}>
                     <Button variant="outlined" size="medium" color="primary">
                         More Info ...

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
@@ -8,6 +8,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { CardHeader } from "@mui/material";
+import { MoviesContext } from "../../contexts/moviesContext";
+import { useQueries } from "react-query";
+import { getMovie } from "../../api/tmdb-api";
 
 const styles = {
     root: {
@@ -26,8 +29,19 @@ const styles = {
 };
 
 const MovieHeader = (props) => {
+    const { favourites: movieIds } = useContext(MoviesContext);
+
+    const favouriteMovieQueries = useQueries(
+        movieIds.map((movieId) => {
+            return {
+                queryKey: ["movie", { id: movieId }],
+                queryFn: getMovie,
+            };
+        })
+    );
+
     const movie = props.movie;
-    const favouriteMovies = JSON.parse(localStorage.getItem("favourites"));
+    const favouriteMovies = favouriteMovieQueries.map((q) => q.data);
     let favouriteIcon = null;
     if (favouriteMovies.length > 0) {
         favouriteMovies.forEach(element => {

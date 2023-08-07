@@ -27,29 +27,6 @@ const styles = {
 
 const TvShowHeader = (props) => {
     const tvShow = props.tvShow;
-    const favouriteMovies = JSON.parse(localStorage.getItem("favourites"));
-    let favouriteIcon = null;
-    if (favouriteMovies.length > 0) {
-        favouriteMovies.forEach(element => {
-            if (tvShow.id == element.id && element.favourite == true) {
-                favouriteIcon = <Avatar sx={styles.favouriteAvatar}>
-                    <FavoriteIcon />
-                </Avatar>
-            } else {
-                favouriteIcon = <Avatar sx={styles.nonFavouriteAvatar}>
-                    <FavoriteIcon />
-                </Avatar>
-            }
-        })
-    } else {
-        favouriteIcon = <Avatar sx={styles.nonFavouriteAvatar}>
-            <FavoriteIcon />
-        </Avatar>
-    };
-
-
-
-
 
 
     return (
@@ -57,8 +34,6 @@ const TvShowHeader = (props) => {
             <IconButton aria-label="go back">
                 <ArrowBackIcon color="primary" fontSize="large" />
             </IconButton>
-
-            {favouriteIcon}
 
             <Typography variant="h4" component="h3">
                 {tvShow.name}{"   "}

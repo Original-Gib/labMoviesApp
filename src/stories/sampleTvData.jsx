@@ -16,5 +16,6 @@ export default {
     popularity: 2876.174,
     poster_path: "/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg",
     vote_average: 7.4,
-    vote_count: 25
+    vote_count: 25,
+    favourites: ['94722']
 };

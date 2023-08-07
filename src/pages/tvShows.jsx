@@ -3,7 +3,7 @@ import PageTemplate from "../components/templateTvShowListPage";
 import { getTvShows } from "../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
-import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
+import AddToFavouriteTvShowsIcon from '../components/cardIcons/addToFavouriteTvShows'
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
@@ -46,7 +46,7 @@ const TvShowPage = (props) => {
                 title="Tv Shows"
                 tvShows={tvShows}
                 action={(tvShow) => {
-                    return <AddToFavouritesIcon movie={tvShow} />
+                    return <AddToFavouriteTvShowsIcon tvShow={tvShow} />
                 }}
             />
             <Paper component="div" sx={styles.root}>

@@ -27,29 +27,6 @@ const styles = {
 
 const ActorHeader = (props) => {
     const actor = props.actor;
-    const favouriteMovies = JSON.parse(localStorage.getItem("favourites"));
-    let favouriteIcon = null;
-    if (favouriteMovies.length > 0) {
-        favouriteMovies.forEach(element => {
-            if (actor.id == element.id && element.favourite == true) {
-                favouriteIcon = <Avatar sx={styles.favouriteAvatar}>
-                    <FavoriteIcon />
-                </Avatar>
-            } else {
-                favouriteIcon = <Avatar sx={styles.nonFavouriteAvatar}>
-                    <FavoriteIcon />
-                </Avatar>
-            }
-        })
-    } else {
-        favouriteIcon = <Avatar sx={styles.nonFavouriteAvatar}>
-            <FavoriteIcon />
-        </Avatar>
-    };
-
-
-
-
 
 
     return (
@@ -58,7 +35,7 @@ const ActorHeader = (props) => {
                 <ArrowBackIcon color="primary" fontSize="large" />
             </IconButton>
 
-            {favouriteIcon}
+
 
             <Typography variant="h4" component="h3">
                 {actor.name}{"   "}
