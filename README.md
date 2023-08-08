@@ -59,47 +59,47 @@ e.g.
 
 > Add your favourite Tv shows to your favourites list
 
-![] [image8]
+![][image8]
 
 #### Tv Shows Details
 
 > Each Tv show has its own detail page showing an overview, as well as genre, number of episodes, rating and release date
 
-![] [image9]
+![][image9]
 
 #### Actor Library
 
 > Library of actors fetched from the persons TMDB endpoint
 
-![] [image10]
+![][image10]
 
 #### Save Favourite Actors
 
 > Save a list of your favourite actors 
 
-![] [image11]
+![][image11]
 
 #### View an actors details
 
 > Access a page of the actors details including an overview, place of birth, date of birth and their popularity rating
 
-![] [image12]
+![][image12]
 
 #### Fantasy Movie
 
 > Create your own fantasy movie which includes the title, run time, release date, overview and production company 
 
-![] [image13]
+![][image13]
 
-![] [image14]
+![][image14]
 
-![] [image15]
+![][image15]
 
 #### Pagination on list pages
 
 > On each of the list pages, use the arrows to allow you to browser through the different selection of movies/tv shows/actors
 
-![] [image16]
+![][image16]
 
 ## Storybook.
 
@@ -109,23 +109,23 @@ e.g.
 
 > Actor Card
 
-![] [image17]
+![][image17]
 
 > Actor list
 
-![] [image18]
+![][image18]
 
 > Actor Details
 
-![] [image19]
+![][image19]
 
 > Tv show list
 
-![] [image20]
+![][image20]
 
 > tv show data
 
-![] [image21]
+![][image21]
 
 e.g.
 
@@ -143,11 +143,11 @@ e.g.
 
 > Supabase project authentication logs
 
-![] [image22]
+![][image22]
 
 > Supabase auth dashboard
 
-![] [image23]
+![][image23]
 
 ## Deployment (if relevant).
 
@@ -160,7 +160,7 @@ Username: moviesapptestuser@mailinator.com ; Password: Test123
 
 > Vercel Deployment
 
-![] [image24]
+![][image24]
 
 ## Additional Information.
 
