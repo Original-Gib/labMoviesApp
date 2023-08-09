@@ -1,3 +1,4 @@
+//hardcoded list of production companies used in the my movie form
 const productionCompanies = [
     {
         value: "Disney",

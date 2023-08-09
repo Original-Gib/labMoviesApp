@@ -7,6 +7,7 @@ import { getMovieImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
+//styles for the movie details page
 const styles = {
     gridListRoot: {
         display: "flex",
@@ -19,6 +20,7 @@ const styles = {
     },
 };
 
+//contructing the movie template page using the movie prop passed in as getting the images based on the ID of the movie
 const TemplateMoviePage = ({ movie, children }) => {
     const { data, error, isLoading, isError } = useQuery(
         ["images", { id: movie.id }],
@@ -34,6 +36,7 @@ const TemplateMoviePage = ({ movie, children }) => {
     }
     const images = data.posters
 
+    //return statement to render the page
     return (
         <>
             <MovieHeader movie={movie} />

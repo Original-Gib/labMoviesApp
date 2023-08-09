@@ -6,6 +6,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import Spinner from '../spinner'
 import MyMovieForm from "../myMovieForm";
 
+//styles for the mymovie page
 const styles = {
     gridListRoot: {
         display: "flex",
@@ -21,7 +22,7 @@ const styles = {
 
 
 const TemplateMyMoviePage = ({ children }) => {
-
+    //return statment to render the page
     return (
         <>
             <MyMovieHeader />

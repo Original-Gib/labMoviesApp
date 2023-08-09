@@ -6,6 +6,7 @@ import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
 import ActorList from "../actorList";
 
+//styles for the template actor page
 const styles = {
     root: {
         padding: "20px",
@@ -19,12 +20,14 @@ const styles = {
 };
 
 function ActorListPageTemplate({ actors, title, action }) {
+    //defining the filters and their states
     const [titleFilter, setTitleFilter] = useState("");
     const [genreFilter, setGenreFilter] = useState("0");
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const genreId = Number(genreFilter);
 
+    //displaying actors based on the filters applied 
     let displayedActors = actors
         .filter((m) => {
             return m.name.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
@@ -38,6 +41,7 @@ function ActorListPageTemplate({ actors, title, action }) {
         else setGenreFilter(value);
     };
 
+    //return statemnt to render the template
     return (
         <>
             <Grid container sx={styles.root}>

@@ -9,6 +9,7 @@ import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { CardHeader } from "@mui/material";
 
+//styles for the tvshow header
 const styles = {
     root: {
         display: "flex",
@@ -28,7 +29,7 @@ const styles = {
 const TvShowHeader = (props) => {
     const tvShow = props.tvShow;
 
-
+    //return statement to render the tv show header component
     return (
         <Paper component="div" sx={styles.root}>
             <IconButton aria-label="go back">

@@ -6,6 +6,7 @@ import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
 import MovieList from "../movieList";
 
+//styles for the template page for movie lists
 const styles = {
     root: {
         padding: "20px",
@@ -19,6 +20,7 @@ const styles = {
 };
 
 function MovieListPageTemplate({ movies, title, action, release_date }) {
+    //setting the filters available on the page
     const [titleFilter, setTitleFilter] = useState("");
     const [genreFilter, setGenreFilter] = useState("0");
     const [releaseFilter, setReleaseFitler] = useState("");
@@ -27,6 +29,7 @@ function MovieListPageTemplate({ movies, title, action, release_date }) {
 
     const genreId = Number(genreFilter);
 
+    //displaying the movies based on the filters applied 
     let displayedMovies = movies
         .filter((m) => {
             return m.title.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
@@ -44,6 +47,7 @@ function MovieListPageTemplate({ movies, title, action, release_date }) {
         else setGenreFilter(value);
     };
 
+    //return statement ot render the page
     return (
         <>
             <Grid container sx={styles.root}>

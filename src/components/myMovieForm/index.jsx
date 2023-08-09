@@ -17,6 +17,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 const MyMovieForm = () => {
+    //setting the default valies for the form
     const defaultValues = {
         title: "",
         overview: "",
@@ -25,6 +26,7 @@ const MyMovieForm = () => {
         releaseDate: "",
         runTime: "",
     };
+    // defining the control functions for the form
     const {
         control,
         formState: { errors },
@@ -33,12 +35,11 @@ const MyMovieForm = () => {
     } = useForm(defaultValues);
     const navigate = useNavigate();
     const context = useContext(MoviesContext);
+    //setting the default production company to disney
     const [productionCompany, setProductionCompany] = useState("Disney");
     const [open, setOpen] = useState(false);  //NEW
 
-
-
-
+    //updating the production company when a user selects from the dropdown
     const handleProductionCompanyChange = (event) => {
         setProductionCompany(event.target.value);
     };
@@ -48,12 +49,15 @@ const MyMovieForm = () => {
         navigate("/");
     };
 
+    //submitting the movie to the movies context when the form is complete
     const onSubmit = (myMovie) => {
 
         myMovie.productionCompany = productionCompany
         context.addMyMovie(myMovie);
         setOpen(true); // NEW
     };
+
+    //return statement to render the form
     return (
         <Box component="div" sx={styles.root}>
             <Typography component="h2" variant="h3">
@@ -219,8 +223,6 @@ const MyMovieForm = () => {
                         </TextField>
                     )}
                 />
-
-
                 <Box sx={styles.buttons}>
                     <Button
                         type="submit"

@@ -9,6 +9,7 @@ import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { CardHeader } from "@mui/material";
 
+//styles for the my movie header
 const styles = {
     root: {
         display: "flex",
@@ -28,14 +29,12 @@ const styles = {
 const MyMovieHeader = () => {
     const title = "My Fantasy Movie"
 
+    //return statement to render the my movie header component
     return (
         <Paper component="div" sx={styles.root}>
             <IconButton aria-label="go back">
                 <ArrowBackIcon color="primary" fontSize="large" />
             </IconButton>
-
-
-
             <Typography variant="h4" component="h3">
                 {title}{"   "}
                 <br />

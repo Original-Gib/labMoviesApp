@@ -7,6 +7,7 @@ import { getActorImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
+//styles for the actor details page
 const styles = {
     gridListRoot: {
         display: "flex",
@@ -19,6 +20,7 @@ const styles = {
     },
 };
 
+//getting the actor data from the prop passed in and also the getActorImages function from the api file
 const TemplateActorPage = ({ actor, children }) => {
     const { data, error, isLoading, isError } = useQuery(
         ["images", { id: actor.id }],
@@ -32,8 +34,11 @@ const TemplateActorPage = ({ actor, children }) => {
     if (isError) {
         return <h1>{error.message}</h1>;
     }
+
+    //assigning the images based on the profiles data returned from the getActorImages call
     const images = data.profiles
 
+    //return statement to render the page
     return (
         <>
             <ActorHeader actor={actor} />

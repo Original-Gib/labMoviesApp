@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { getMovieReviews } from "../../api/tmdb-api";
 import { excerpt } from "../../util";
 
+//styles for the movie reviews component
 const styles = {
     table: {
         minWidth: 550,
@@ -17,8 +18,10 @@ const styles = {
 };
 
 export default function MovieReviews({ movie }) {
+    //defining the reviews component and function to set the reviews. Empty array state is used for the review
     const [reviews, setReviews] = useState([]);
 
+    //use effect to get the movie reviews based on the movie ID and then add them to the reviews array
     useEffect(() => {
         getMovieReviews(movie.id).then((reviews) => {
             setReviews(reviews);
@@ -26,6 +29,7 @@ export default function MovieReviews({ movie }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    //return statement to render the review component
     return (
         <TableContainer component={Paper}>
             <Table sx={styles.table} aria-label="reviews table">

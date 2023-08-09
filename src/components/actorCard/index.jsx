@@ -15,6 +15,8 @@ import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import { MoviesContext } from "../../contexts/moviesContext";
 
+
+//styling for the cards
 const styles = {
     card: { maxWidth: 345 },
     media: { height: 500 },
@@ -24,8 +26,10 @@ const styles = {
 };
 
 export default function ActorCard({ actor, action }) {
+    //accessing the favouriteActors array from the MoviesContext file
     const { favouriteActors, addToFavouriteActors } = useContext(MoviesContext);
 
+    //searching the favourite actors array to see if an actor has been favourited 
     if (favouriteActors.find((id) => id === actor.id)) {
         actor.favourite = true;
     } else {
@@ -33,7 +37,7 @@ export default function ActorCard({ actor, action }) {
     }
 
 
-
+    // return statement to display the actor card
     return (
         <Card sx={styles.card}>
             <CardHeader

@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import { MoviesContext } from "../../contexts/moviesContext";
 
+//styles for the tv show card
 const styles = {
     card: { maxWidth: 345 },
     media: { height: 500 },
@@ -24,16 +25,17 @@ const styles = {
 };
 
 export default function TvShowCard({ tvShow, action }) {
+    //accessing the favourite tv shows array from the movies context
     const { favouriteTvShows, addToFavouriteTvShows } = useContext(MoviesContext);
 
+    //logic to check if a show has been favourited 
     if (favouriteTvShows.find((id) => id === tvShow.id)) {
         tvShow.favourite = true;
     } else {
         tvShow.favourite = false
     }
 
-
-
+    //return statement to render the page
     return (
         <Card sx={styles.card}>
             <CardHeader

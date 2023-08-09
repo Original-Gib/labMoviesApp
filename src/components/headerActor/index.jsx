@@ -9,6 +9,8 @@ import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { CardHeader } from "@mui/material";
 
+
+//styles for the header
 const styles = {
     root: {
         display: "flex",
@@ -29,6 +31,7 @@ const ActorHeader = (props) => {
     const actor = props.actor;
 
 
+    // return statement to render the header component
     return (
         <Paper component="div" sx={styles.root}>
             <IconButton aria-label="go back">

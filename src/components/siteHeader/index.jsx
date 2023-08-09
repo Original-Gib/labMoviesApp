@@ -14,6 +14,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import LogoutIcon from '@mui/icons-material/Logout';
 import supabase from "../../index";
 
+//styles for the site header
 const styles = {
     title: {
         flexGrow: 1,
@@ -29,6 +30,7 @@ const SiteHeader = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
+    //defining the menu options and paths within the header
     const menuOptions = [
         { label: "Home", path: "/" },
         { label: "Upcoming", path: "/movies/upcoming" },
@@ -41,6 +43,7 @@ const SiteHeader = () => {
         { label: "My Movie", path: "/myMovie" },
     ];
 
+    //function to handle menu selection
     const handleMenuSelect = (pageURL) => {
         navigate(pageURL);
     };
@@ -49,11 +52,12 @@ const SiteHeader = () => {
         setAnchorEl(event.currentTarget);
     };
 
-
+    // function which uses the supabase client to log a user out and clear the session data
     const signOut = () => {
         supabase.auth.signOut()
     }
 
+    //return statement to render the site header component
     return (
         <>
             <AppBar position="fixed" elevation={0} color="primary">

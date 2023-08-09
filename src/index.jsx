@@ -35,12 +35,15 @@ const queryClient = new QueryClient({
     },
 });
 
+//deifining the supabase client
 const supabase = createClient(`https://${import.meta.env.VITE_SUPABASE_ORG}.supabase.co`, `${import.meta.env.VITE_SUPABASE_KEY}`)
 
 
 const App = () => {
+    //creating a session variable for auth
     const [session, setSession] = useState(null)
 
+    //use effect to set the session data
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
             setSession(session)
@@ -55,6 +58,7 @@ const App = () => {
         return () => subscription.unsubscribe()
     }, [])
 
+    //logic for which view to render; if no session data is present render the login page, if session data is found render the rest of the site
     if (!session) {
         return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />)
     }

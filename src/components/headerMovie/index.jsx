@@ -12,6 +12,7 @@ import { MoviesContext } from "../../contexts/moviesContext";
 import { useQueries } from "react-query";
 import { getMovie } from "../../api/tmdb-api";
 
+//styles for the header component
 const styles = {
     root: {
         display: "flex",
@@ -29,8 +30,10 @@ const styles = {
 };
 
 const MovieHeader = (props) => {
+    //accessing the favourites array from the MoviesContext file
     const { favourites: movieIds } = useContext(MoviesContext);
 
+    //useQueries to map out the favourite movies based on the ID's in the array
     const favouriteMovieQueries = useQueries(
         movieIds.map((movieId) => {
             return {
@@ -40,6 +43,7 @@ const MovieHeader = (props) => {
         })
     );
 
+    //logic to display the favourite icon over movies which have been favourited
     const movie = props.movie;
     const favouriteMovies = favouriteMovieQueries.map((q) => q.data);
     let favouriteIcon = null;
@@ -61,11 +65,7 @@ const MovieHeader = (props) => {
         </Avatar>
     };
 
-
-
-
-
-
+    //return statement to render the movie header
     return (
         <Paper component="div" sx={styles.root}>
             <IconButton aria-label="go back">

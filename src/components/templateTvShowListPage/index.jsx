@@ -6,6 +6,7 @@ import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
 import TvShowList from "../tvList";
 
+//styles for the Tv show list page
 const styles = {
     root: {
         padding: "20px",
@@ -19,12 +20,14 @@ const styles = {
 };
 
 function TvShowListPageTemplate({ tvShows, title, action }) {
+    //deifing the fitlers on the page
     const [titleFilter, setTitleFilter] = useState("");
     const [genreFilter, setGenreFilter] = useState("0");
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const genreId = Number(genreFilter);
 
+    //displaying the tv shows based on the filters applied 
     let displayedTvShows = tvShows
         .filter((m) => {
             return m.name.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
@@ -38,6 +41,7 @@ function TvShowListPageTemplate({ tvShows, title, action }) {
         else setGenreFilter(value);
     };
 
+    //return statement to render the page
     return (
         <>
             <Grid container sx={styles.root}>

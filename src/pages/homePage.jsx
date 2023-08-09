@@ -20,6 +20,7 @@ const styles = {
 };
 
 const HomePage = (props) => {
+    //defining a page number vairable to control pagination
     const [pageNumber, setPageNumber] = useState(1);
     const { data, error, isLoading, isError } = useQuery(["discover", pageNumber], () => getMovies(pageNumber));
 
@@ -32,10 +33,12 @@ const HomePage = (props) => {
 
     const movies = data ? data.results : [];
 
+    //function to move on to the next page
     const nextPage = () => {
         setPageNumber(pageNumber + 1)
     };
 
+    //function to move on to the previous page
     const previousPage = () => {
         setPageNumber(pageNumber - 1)
     }
@@ -57,9 +60,6 @@ const HomePage = (props) => {
                 >
                     <ArrowBackIcon color="primary" fontSize="large" />
                 </IconButton>
-
-
-
                 <IconButton
                     aria-label="go forward"
                     onClick={nextPage}

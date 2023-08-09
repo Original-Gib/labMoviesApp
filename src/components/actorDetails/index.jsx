@@ -5,11 +5,11 @@ import CakeIcon from '@mui/icons-material/Cake';
 import PinDropIcon from '@mui/icons-material/PinDrop';
 import StarRate from "@mui/icons-material/StarRate";
 import Typography from "@mui/material/Typography";
-
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 
 
+//Stlyes used on the actor detail page
 const styles = {
     chipSet: {
         display: "flex",
@@ -31,8 +31,9 @@ const styles = {
 };
 
 const ActorDetails = ({ actor }) => {
-    const [drawerOpen, setDrawerOpen] = useState(false); // New
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
+    //Return statement to render the actor details page
     return (
         <>
             <Typography variant="h5" component="h3">

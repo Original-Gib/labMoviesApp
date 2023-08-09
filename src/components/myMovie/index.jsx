@@ -10,6 +10,7 @@ import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
 import { Link } from "react-router-dom";
 
+//styles for the my movie component
 const styles = {
     chipSet: {
         display: "flex",
@@ -32,10 +33,13 @@ const styles = {
 
 const MyMovie = () => {
 
+    //accessing the movies context
     const myMovieContext = useContext(MoviesContext);
 
+    //acccessing the myMovie stored in the movies context
     const myMovie = myMovieContext.myMovie.myMovie;
 
+    //return statement to display the movie if the response is not null. If it is null then it prompts the user to create a movie
     if (myMovie != null) {
         return (
             <>

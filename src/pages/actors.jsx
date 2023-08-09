@@ -9,6 +9,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 
+//styesl for the actors list page
 const styles = {
     root: {
         display: "flex",
@@ -20,6 +21,7 @@ const styles = {
 };
 
 const ActorPage = (props) => {
+    //defining a page number variable to be used in pagination
     const [pageNumber, setPageNumber] = useState(1);
     const { data, error, isLoading, isError } = useQuery(["actors", pageNumber], () => getActors(pageNumber));
 
@@ -32,10 +34,12 @@ const ActorPage = (props) => {
 
     const actors = data ? data.results : [];
 
+    //function to move to the next page
     const nextPage = () => {
         setPageNumber(pageNumber + 1)
     };
 
+    //function to move to the previous page
     const previousPage = () => {
         setPageNumber(pageNumber - 1)
     }
@@ -57,9 +61,6 @@ const ActorPage = (props) => {
                 >
                     <ArrowBackIcon color="primary" fontSize="large" />
                 </IconButton>
-
-
-
                 <IconButton
                     aria-label="go forward"
                     onClick={nextPage}

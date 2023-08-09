@@ -1,3 +1,5 @@
+
+//TMDB discovery endpoint for list of movies
 export const getMovies = (pageNumber) => {
     return fetch(
         `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&limit=20&page=${pageNumber}`
@@ -12,6 +14,7 @@ export const getMovies = (pageNumber) => {
         });
 };
 
+//TMDB movie endpoint for movie details
 export const getMovie = (args) => {
     // console.log(args)
     const [, idPart] = args.queryKey;
@@ -29,6 +32,7 @@ export const getMovie = (args) => {
         });
 };
 
+//TMDB genre endpoint to get movie genres 
 export const getGenres = async () => {
     return fetch(
         "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
@@ -46,6 +50,7 @@ export const getGenres = async () => {
 };
 
 
+//TMDB movie endpoint to get movie images
 export const getMovieImages = ({ queryKey }) => {
     const [, idPart] = queryKey;
     const { id } = idPart;
@@ -63,7 +68,7 @@ export const getMovieImages = ({ queryKey }) => {
         });
 };
 
-
+//TMDB movie endpoint to get movie reviews
 export const getMovieReviews = (id) => {
     return fetch(
         `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${import.meta.env.VITE_TMDB_KEY}`
@@ -75,6 +80,7 @@ export const getMovieReviews = (id) => {
         });
 };
 
+//TMDB movie endpoint to get upcoming movies
 export const getUpcomingMovies = (pageNumber) => {
     return fetch(
         `https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&limit=20&page=${pageNumber}`
@@ -89,6 +95,8 @@ export const getUpcomingMovies = (pageNumber) => {
         });
 };
 
+
+//TMDB movie endpoint to get top rated movies
 export const getTopMovies = (pageNumber) => {
     return fetch(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&limit=20&page=${pageNumber}`
@@ -103,6 +111,8 @@ export const getTopMovies = (pageNumber) => {
         });
 };
 
+
+//TMDB TV endpoint to get list of TV shows 
 export const getTvShows = (pageNumber) => {
     return fetch(
         `https://api.themoviedb.org/3/discover/tv?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&limit=20&page=${pageNumber}`
@@ -117,6 +127,8 @@ export const getTvShows = (pageNumber) => {
         });
 };
 
+
+//TMDB tv endpoint to get tv show details
 export const getTvShow = (args) => {
     // console.log(args)
     const [, idPart] = args.queryKey;
@@ -134,6 +146,7 @@ export const getTvShow = (args) => {
         });
 };
 
+//TMDB tv show endpoint to get tv show images
 export const getTvShowImages = ({ queryKey }) => {
     const [, idPart] = queryKey;
     const { id } = idPart;
@@ -151,6 +164,7 @@ export const getTvShowImages = ({ queryKey }) => {
         });
 };
 
+//TMDB persons endpoint to get list of actors 
 export const getActors = (pageNumber) => {
     return fetch(
         `https://api.themoviedb.org/3/person/popular?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&limit=20&page=${pageNumber}`
@@ -165,6 +179,8 @@ export const getActors = (pageNumber) => {
         });
 };
 
+
+//TMDB person endpoint to get actor details
 export const getActor = (args) => {
     const [, idPart] = args.queryKey;
     const { id } = idPart;
@@ -181,6 +197,8 @@ export const getActor = (args) => {
         });
 };
 
+
+//TMDB person endpoint to get actor images
 export const getActorImages = ({ queryKey }) => {
     const [, idPart] = queryKey;
     const { id } = idPart;

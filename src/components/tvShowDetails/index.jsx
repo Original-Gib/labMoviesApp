@@ -8,7 +8,7 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
 
-
+//styles for the tv show context page
 const styles = {
     chipSet: {
         display: "flex",

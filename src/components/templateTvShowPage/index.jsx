@@ -7,6 +7,7 @@ import { getTvShowImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
+//styles for the template tv show details page
 const styles = {
     gridListRoot: {
         display: "flex",
@@ -19,6 +20,7 @@ const styles = {
     },
 };
 
+//contructing the page based on the tv show prop passed in and getting images based off the ID of the show
 const TemplateTvShowPage = ({ tvShow, children }) => {
     const { data, error, isLoading, isError } = useQuery(
         ["images", { id: tvShow.id }],
@@ -34,6 +36,7 @@ const TemplateTvShowPage = ({ tvShow, children }) => {
     }
     const images = data.posters
 
+    //return statement to render the page 
     return (
         <>
             <TvShowHeader tvShow={tvShow} />

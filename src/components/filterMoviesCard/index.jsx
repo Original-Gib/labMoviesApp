@@ -13,6 +13,7 @@ import { getGenres } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
+//Styles for the filter pop out
 const styles = {
     root: {
         maxWidth: 345,
@@ -27,6 +28,7 @@ const styles = {
 };
 
 export default function FilterMoviesCard(props) {
+    //Use query function to call the getGenres function from the api file
     const { data, error, isLoading, isError } = useQuery("genres", getGenres);
 
     if (isLoading) {
@@ -43,9 +45,10 @@ export default function FilterMoviesCard(props) {
 
     const handleUserInput = (e, type, value) => {
         e.preventDefault();
-        props.onUserInput(type, value); // NEW
+        props.onUserInput(type, value);
     };
 
+    //Functions to handle changes to the form based on user inputs 
     const handleTextChange = (e, props) => {
         handleUserInput(e, "title", e.target.value);
     };
@@ -58,6 +61,7 @@ export default function FilterMoviesCard(props) {
         handleUserInput(e, "genre", e.target.value);
     };
 
+    //return statement to render the component 
     return (
         <>
             <Card sx={styles.root} variant="outlined">

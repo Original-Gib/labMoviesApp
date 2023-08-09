@@ -4,6 +4,7 @@ import MyMovieForm from "../components/myMovieForm";
 
 const MyMovieFormPage = () => {
 
+    //accessing the components to display on the my movie form page
     return (
         <PageTemplate >
             <MyMovieForm />
